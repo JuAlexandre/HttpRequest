@@ -1,7 +1,10 @@
 document.getElementById('form').onsubmit = function (event) {
     event.preventDefault();
+
+    const API_KEY = 'your_api_key';
     let value = document.getElementById('value').value;
-    let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + value + '&units=metric&APPID=e0a85eda475eda928d34caa96b233c4d';
+    let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + value + '&units=metric&APPID=' + API_KEY;
+    
     fetch(url).then(function (request) {
         request.json().then(function (json) {
             console.log(json);
